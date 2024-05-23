@@ -10,12 +10,10 @@ Assertion messages may be unclear about what they display in some languages. If 
 
 def duplicate_encode(word):
     word = word.lower()
+    result = ''
     for i in word:
         if word.count(i) > 1:
-            word[word.index(i)] = ')'
+            result += ')'
         else:
-            word[word.index(i)] = '('
-
-    return word
-
-print(duplicate_encode('din')) # '((('
+            result += '('
+    return result
