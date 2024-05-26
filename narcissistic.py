@@ -16,3 +16,4 @@ Error checking for text strings or other invalid inputs is not required, only va
 
 
 def narcissistic(value):
+    return value == sum([int(i) ** len(str(value)) for i in str(value)])
