@@ -10,3 +10,9 @@ array_diff([1,2,2,2,3],[2]) == [1,3]
 
 def array_diff(a, b):
     return [x for x in a if x not in b]
+
+def array_diff(a, b):
+    for x in a:
+        if x in b:
+            a.remove(x)
+    return a
