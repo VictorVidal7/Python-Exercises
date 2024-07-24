@@ -11,3 +11,7 @@ XO("zzoo") => false'''
 
 def xo(s):
     return s.lower().count('x') == s.lower().count('o')
+
+def xo(s):
+    s = s.lower()
+    return s.count('x') == x.count('o')
