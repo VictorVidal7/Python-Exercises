@@ -7,5 +7,17 @@ Examples:
 "This is another test" --> "This is rehtona test"'''
 
 def spin_words(sentence):
-    # Your code goes here
+    new_sentence = []
+    for word in sentence.split():
+        if len(word) >= 5:
+            new_sentence.append(word[::-1])
+        else:
+            new_sentence.append(word)
+    return new_sentence
+
+def spin_words(sentence):
     return ' '.join([word[::-1] if len(word) >= 5 else word for word in sentence.split()])
+
+print(spin_words("Hey fellow warriors")) # "Hey wollef sroirraw"
+print(spin_words("This is a test")) # "This is a test"
+print(spin_words("This is another test")) # "This is rehtona test"
