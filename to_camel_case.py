@@ -14,3 +14,7 @@ def to_camel_case(text):
     else:
         text = text.replace('-', ' ').replace('_', ' ').split()
         return text[0] + ''.join([x.capitalize() for x in text[1:]])
+
+print(to_camel_case("the-stealth-warrior")) # "theStealthWarrior"
+print(to_camel_case("The_Stealth_Warrior")) # "TheStealthWarrior"
+print(to_camel_case("The_Stealth-Warrior")) # "TheStealthWarrior"
