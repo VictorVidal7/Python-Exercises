@@ -9,3 +9,14 @@ Examples:
 
 def opposite(number):
     return -number
+
+def opposite(number):
+    return number * -1
+
+def opposite(number):
+    return number.__neg__()
+
+print(opposite(1)) # -1
+print(opposite(14)) # -14
+print(opposite(-34)) # 34
+print(opposite(0)) # 0
