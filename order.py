@@ -1,4 +1,5 @@
-'''Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+'''Your task is to sort a given string. Each word in the string will contain a single number. 
+This number is the position the word should have in the result.
 
 Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
 
@@ -9,7 +10,18 @@ Examples
 "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 ""  -->  ""'''
 
-
+def order(sentence):
+    if sentence == "":
+        return ""
+    else:
+        mydict = {}
+        for word in sentence.split():
+            for char in word:
+                if char.isdigit():
+                    mydict[char] = word
+        mydict = dict(sorted(mydict.items()))
+        return " ".join(mydict.values())
+    
 def order(sentence):
     if sentence == "":
         return ""
@@ -17,3 +29,5 @@ def order(sentence):
         sentence = sentence.split()
         sentence.sort(key=lambda x: int(''.join(filter(str.isdigit, x))))
         return ' '.join(sentence)
+
+print(order("is2 Thi1s T4est 3a")) # [('1', 'Thi1s'), ('2', 'is2'), ('3', '3a'), ('4', 'T4est')]
