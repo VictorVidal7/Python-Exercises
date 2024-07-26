@@ -1,4 +1,5 @@
-'''Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+'''Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, 
+which is the number of times you must multiply the digits in num until you reach a single digit.
 
 For example (Input --> Output):
 
@@ -14,3 +15,14 @@ def persistence(n):
         n = reduce(lambda x, y: x*y, [int(i) for i in str(n)])
         count += 1
     return count
+
+def persistence(n):
+    count = 0
+    while n > 9:
+        n = eval('*'.join(str(n)))
+        count += 1
+    return count
+
+print(persistence(39)) # 3
+print(persistence(999)) # 4
+print(persistence(4)) # 0
