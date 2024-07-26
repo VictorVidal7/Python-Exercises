@@ -23,6 +23,13 @@ def persistence(n):
         count += 1
     return count
 
+def persistence(n):
+    #Recursive solution
+    if n < 10:
+        return 0
+    else:
+        return 1 + persistence(eval('*'.join(str(n))))
+
 print(persistence(39)) # 3
 print(persistence(999)) # 4
 print(persistence(4)) # 0
